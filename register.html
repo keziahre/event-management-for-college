@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration - NCW Event Organizer</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo2.jpeg" alt="Event Logo">
+            <span>NCW Event Organizer</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="registration-container">
+        <h2>Register for Tech Fest 2025</h2>
+
+        <label>Are you a student of Nirmala College for Women?</label>
+        <select id="student-type">
+            <option value="ncw">Yes, I am from NCW</option>
+            <option value="other">No, I am from another college</option>
+        </select>
+
+        <form id="ncw-student-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="text" placeholder="Department" required>
+            <input type="email" placeholder="Email" required>
+            <button type="submit">Register</button>
+        </form>
+
+        <form id="other-student-form" style="display: none;">
+            <input type="text" placeholder="Full Name" required>
+            <input type="text" placeholder="College Name" required>
+            <input type="text" placeholder="Location" required>
+            <input type="email" placeholder="Email" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('student-type').addEventListener('change', function() {
+            if (this.value === 'ncw') {
+                document.getElementById('ncw-student-form').style.display = 'block';
+                document.getElementById('other-student-form').style.display = 'none';
+            } else {
+                document.getElementById('ncw-student-form').style.display = 'none';
+                document.getElementById('other-student-form').style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>
